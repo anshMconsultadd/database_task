@@ -1,0 +1,43 @@
+-- COMMIT. ROLLBACK and SAVEPOINT are the most commonly used TCL commands in SQL.
+-- A single unit of work in a database is formed after the consecutive execution of commands is known as a transaction.
+
+
+1. BEGIN - it indcates the beginning of the transaction 
+ex : BEGIN TRANSACTION t_name;
+
+2. COMMIT
+COMMIT command in SQL is used to save all the transaction-related changes permanently to the disk. 
+Whenever DDL commands such as INSERT, UPDATE and DELETE are used, the changes made by these commands are permanent only after closing the current session. So before closing the session, one can easily roll back the changes made by the DDL commands. 
+Hence, if we want the changes to be saved permanently to the disk without closing the session, we will use the commit command.
+
+ex: START TRANSACTION 
+AFTER WHICH WE CAN PERFROM ANY OF THE OPEARTION LIKE 
+                CREATE TABLE t_school(ID INT, School_Name VARCHAR(40), Number_Of_Students INT, Number_Of_Teachers INT, Number_Of_Classrooms INT, EmailID VARCHAR(40));  
+                INSERT INTO TABLE 
+
+ and once the records are inserted successfull ywe will save the changes permanently using the COMMIT command .
+
+
+3. SAVEPOINTS 
+We can divide the database operations into parts. 
+Using the SAVEPOINT command in SQL, we can save these different parts of the same transaction using different names. For example, we can save all the insert related queries with the savepoint named INS. To save all the insert related queries in one savepoint,
+ we have to execute the SAVEPOINT query followed by the savepoint name after finishing the insert command execution.
+
+Syntax:
+            SAVEPOINT savepoint_name;  
+            EX WE UPDATED THE ABOVE TABLE 
+            UPDATE t_school SET Number_Of_Students = 9050 WHERE ID = 5;  
+and then saved this part as a savepoint 
+            ex:SAVEPOINT Updation;  
+
+4. ROLLBACK
+
+rollabck to the last commit or savepoint 
+ex : rollback transaction
+
+BEGIN ;
+SAVEPOINT SP_1;
+ROLLBACK TO SAVEPOPINT SP_1;  rollback to the prevous state of transaction
+COMMIT;  save all the changes
+
+5. END TRANSACTION 

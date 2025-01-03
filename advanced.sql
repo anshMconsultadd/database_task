@@ -74,8 +74,7 @@ select e.id,e.fname as first_name ,p.name as project_name from employee as e inn
  select e.*,p.* from employee as e left join project as p on e.id=p.empID
  union 
   select e.*,p.* from employee as e right join project as p on e.id=p.empID;
- -- cross join 
- -- cartesian roduct 
+ 
  
  -- nested subquery 
  -- With a normal nested subquery, the inner SELECT query runs first and executes once, 
@@ -121,8 +120,10 @@ VALUES
 (6, 'David', 'Wilson', 'Finance');
 -- union 
 select * from brokers union select * from contractors;
+
  -- intersection 
  select distinct(brokers.department) from brokers inner join contractors using (id);
+ 
  -- except 
  select brokers.department from brokers left join contractors on brokers.id=contractors.id
  where contractors.id is null ;

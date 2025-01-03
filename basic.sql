@@ -83,11 +83,11 @@ SELECT dept ,AVG(salary) FROM worker GROUP BY dept;
 -- update The SQL UPDATE statement is used to modify the data that is already in the database.
 -- UPDATE table_name SET column_name = value WHERE condition; 
 UPDATE worker SET f_name="raj" ,l_name="tagore" where worker_id=1;
+
 -- delete 
 DELETE FROM worker where worker_id=1;
 
--- GRANT AND REVOKE ARE USED TO MANAGE USER PERMISSION 
--- GRANT privilege_type ON object TO user [WITH GRANT OPTION];
+
 
 
 

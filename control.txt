@@ -1,0 +1,21 @@
+DCL maintains the righst and permisiision to database control over to other users 
+this commands GRANT and REVOKE deals with granting and revoking the database permission 
+
+1. GRANT 
+SQL Grant command is specifically used to provide privileges to database objects for a user. 
+This command also allows users to grant permissions to other users too. 
+EX: 
+GRANT INSERT,
+SELECT ON accounts TO ram.
+
+
+INSERT is the object here it can be insert,update ,delete or all 
+
+2. REVOKE
+it withdraws object prviliges being given to the roles 
+REVOKE INSERT,
+SELECT ON accounts TO ram.
+
+SYNTAX:
+grant/revoke privilege_name on object_name
+to {user_name | public | role_name} 
