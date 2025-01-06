@@ -117,3 +117,21 @@ from emp;
 
 select * ,LAG(age) OVER (ORDER BY salary DESC) as "lead_age"
 from emp;
+
+-- coomon tasble exopressions 
+cte is temporaray named result set created using a simple select statement hat can 
+be further used un subsequent select statements 
+
+-- with clause can include one or more cte in a DATABASE
+-- syntax 
+
+/*
+
+WITH my_cte AS 
+(select a,b,c from table_1)
+select a,c from my_cte
+
+can be used in subsequnt select statements 
+
+*/
+
