@@ -26,11 +26,12 @@ CREATE TABLE emp(
 drop table emp ;
 INSERT INTO emp (f_name, age, dept, salary)
 VALUES
-    ('Alice Johnson', 30, 'Engineering', 75000),
+    ('Alice Johnson', 30, 'Engineering', 80000),
     ('Bob Smith', 45, 'Marketing', 68000),
     ('Carol Lee', 28, 'Human Resources', 62000),
     ('David Brown', 35, 'Engineering', 80000),
-    ('Eva Green', 40, 'Finance', 90000);
+    ('Eva Green', 40, 'Marketing', 68000),
+    ('Arnold s', 40, 'Marketing', 70000);
 
 SELECT * FROM emp;
 
@@ -97,3 +98,22 @@ select
             DENSE_RANK() over ( partition by dept ORDER BY salary desc) as "dense_ep_rank" 
 from emp;
 
+-- nitle () 
+-- this distributes the rows of an ordered partition into roughly equal number of '
+-- predefined groups 
+-- assigns each grouop a number expression ranginfg from 1 
+
+select f_name  ,dept, NTILE(3)
+over ( PARTITION BY dept order by salary) group_number 
+from emp;
+
+-- lead and lag window functions 
+
+-- With LAG and LEAD, you must specify ORDER BY in the OVER clause.
+-- LEAD and LAG are most commonly used to find the value of a previous row or the next row. 
+
+select * ,LEAD(age) OVER (ORDER BY salary DESC) as "lead_age"
+from emp;
+
+select * ,LAG(age) OVER (ORDER BY salary DESC) as "lead_age"
+from emp;
