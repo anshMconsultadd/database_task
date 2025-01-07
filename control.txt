@@ -18,4 +18,4 @@ SELECT ON accounts TO ram.
 
 SYNTAX:
 grant/revoke privilege_name on object_name
-to {user_name | public | role_name} 
+to {user_name | public | role_name} ly equal number of predefined

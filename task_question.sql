@@ -73,7 +73,7 @@ where t.row_num %3=0
 order by t.score desc ;
 
 -- 
-
+(
 WITH FilteredRows AS (
   SELECT 
     image_id, 
@@ -86,9 +86,10 @@ SELECT
   score as weak_label, 
   row_num
 FROM FilteredRows
-WHERE row_num % 3 = 0
-LIMIT 10;
-
+WHERE row_num % 3 = 0 LIMIT 10
+)
+UNION ALL
+(
 WITH FilteredRows AS (
   SELECT 
     image_id, 
@@ -101,9 +102,8 @@ SELECT
   score as weak_label, 
   row_num
 FROM FilteredRows
-WHERE row_num % 3 = 0
-LIMIT 10;
-
+WHERE row_num % 3 = 0 LIMIT 10
+);
 -- using VIEWS 
 
 CREATE VIEW FilteredRowsDesc AS
@@ -147,5 +147,7 @@ FROM FilteredRowsDesc a
 JOIN FilteredRowsAsc b
 ON a.row_num = b.row_num
 LIMIT 10;
+
+
 
 
