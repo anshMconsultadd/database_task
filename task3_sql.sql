@@ -69,11 +69,6 @@ SELECT a.username,
 FROM accounts a
     JOIN accounts_items ai ON a.id = ai.account_id
     JOIN items i ON ai.item_id = i.id
--- since we want the quality for a specif usernmae of a specific type of item
--- so we will be selecting max of quality in lexograpjhical order of quality being 
-
--- common<epic<rare
--- so we will be selecting max of quality for a specific username of a specific type of item
 WHERE ai.quality = (
         SELECT MAX(ai2.quality)
         FROM accounts_items ai2
@@ -85,4 +80,9 @@ GROUP BY a.username,
     i.type,
     ai.quality
 ORDER BY a.username ,i.type;
+
+-- since we want the quality for a specif usernmae of a specific type of item
+-- so we will be selecting max of quality in lexograpjhical order of quality being 
+-- common<epic<rare
+-- so we will be selecting max of quality for a specific username of a specific type of item
     

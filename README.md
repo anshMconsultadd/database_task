@@ -41,3 +41,25 @@
 - **Functions:** Return values for calculations or transformations.
 - **Triggers:** Automate actions on data changes.
 - **Error handling:** Manage exceptions in procedures.
+
+# Database Topics Overview
+
+## 7. Database Security
+- **Authentication and authorization**: Mechanisms to verify user identity and grant access to resources.
+- **Role-based access control (RBAC)**: Assigning permissions based on user roles to ensure proper security.
+- **Encryption: data-at-rest, data-in-transit**: Protecting sensitive data during storage and transfer using cryptographic techniques.
+- **SQL injection and how to prevent it**: Protecting databases from malicious queries by using parameterized statements.
+- **Auditing and compliance**: Tracking database activities and ensuring adherence to regulatory standards.
+
+## 8. Advanced Topics in SQL
+- **Full-text search**: Efficiently querying large text-based data for relevant information.
+- **Temporal tables**: Managing historical and current data for time-sensitive applications.
+- **JSON and XML data handling**: Storing, querying, and processing semi-structured data within SQL databases.
+- **Dynamic SQL and metaprogramming**: Generating and executing SQL queries dynamically at runtime.
+- **Spatial data and GIS functions**: Storing and querying geographic and spatial data using SQL extensions.
+
+## 9. Big Data and NoSQL Databases
+- **Introduction to Big Data concepts**: Exploring massive data sets that exceed traditional processing limits.
+- **Differences between SQL and NoSQL**: Contrasting structured relational databases with flexible, schema-less NoSQL systems.
+- **Popular NoSQL databases: MongoDB, Cassandra, Redis**: Overview of widely used NoSQL database technologies.
+- **Integrating SQL databases with Big Data technologies (Hadoop, Spark)**: Combining SQL databases with Big Data tools for advanced analytics.
