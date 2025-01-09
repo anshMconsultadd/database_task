@@ -62,24 +62,31 @@ VALUES
 
 -- ans
 
-SELECT a.username,
+SELECT 
+    a.username,
     i.type,
     ai.quality AS advised_quality,
-     ORDER BY i.name ASC AS advised_name
-FROM accounts a
-    JOIN accounts_items ai ON a.id = ai.account_id
-    JOIN items i ON ai.item_id = i.id
-WHERE ai.quality = (
+    GROUP_CONCAT(i.name ORDER BY i.name ASC) AS advised_name
+FROM 
+    accounts a
+JOIN 
+    accounts_items ai ON a.id = ai.account_id
+JOIN 
+    items i ON ai.item_id = i.id
+WHERE 
+    ai.quality = (
         SELECT MAX(ai2.quality)
         FROM accounts_items ai2
-            JOIN items i2 ON ai2.item_id = i2.id
-        WHERE ai2.account_id = a.id
-            AND i2.type = i.type
+        JOIN items i2 ON ai2.item_id = i2.id
+        WHERE ai2.account_id = a.id AND i2.type = i.type
     )
-GROUP BY a.username,
-    i.type,
-    ai.quality
-ORDER BY a.username ,i.type;
+GROUP BY 
+    a.username, i.type, ai.quality
+ORDER BY 
+    a.username ASC, i.type ASC;
+
+
+
 
 -- since we want the quality for a specif usernmae of a specific type of item
 -- so we will be selecting max of quality in lexograpjhical order of quality being 

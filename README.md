@@ -63,3 +63,6 @@
 - **Differences between SQL and NoSQL**: Contrasting structured relational databases with flexible, schema-less NoSQL systems.
 - **Popular NoSQL databases: MongoDB, Cassandra, Redis**: Overview of widely used NoSQL database technologies.
 - **Integrating SQL databases with Big Data technologies (Hadoop, Spark)**: Combining SQL databases with Big Data tools for advanced analytics.
+
+
+![alt text](image.png)
